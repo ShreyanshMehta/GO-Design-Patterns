@@ -3,27 +3,26 @@ package main
 import "fmt"
 
 func main() {
+	var comp1, comp2 IComputer
+	var printer1, printer2 Printer
+	printer1 = &Hp{}
+	printer2 = &Epson{}
+	comp1 = &Mac{}
+	comp2 = &Windows{}
 
-	hpPrinter := &Hp{}
-	epsonPrinter := &Epson{}
-
-	macComputer := &Mac{}
-
-	macComputer.SetPrinter(hpPrinter)
-	macComputer.Print()
+	comp1.SetPrinter(printer1)
+	comp1.Print()
 	fmt.Println()
 
-	macComputer.SetPrinter(epsonPrinter)
-	macComputer.Print()
+	comp1.SetPrinter(printer2)
+	comp1.Print()
 	fmt.Println()
 
-	winComputer := &Windows{}
-
-	winComputer.SetPrinter(hpPrinter)
-	winComputer.Print()
+	comp2.SetPrinter(printer1)
+	comp2.Print()
 	fmt.Println()
 
-	winComputer.SetPrinter(epsonPrinter)
-	winComputer.Print()
+	comp2.SetPrinter(printer2)
+	comp2.Print()
 	fmt.Println()
 }
